@@ -1,4 +1,4 @@
-import { Button, Tag, Modal, notification, Table } from "antd";
+import { Tag, Modal, notification, Table } from "antd";
 import { RiCalendarScheduleFill } from "react-icons/ri";
 import { useEffect, useState } from "react";
 import { getCookie } from "../../../helpers/cookie";
@@ -12,7 +12,6 @@ function ModelTraCuuKQ(Props) {
   const { title, content } = Props;
   const [open, setOpen] = useState(false);
   const [loading, setLoading] = useState(true);
-  const [messageNotifi, contextHolder] = notification.useNotification();
   const [data, setData] = useState([]);
 
   const token = getCookie("tokenUser");
@@ -25,7 +24,7 @@ function ModelTraCuuKQ(Props) {
   };
   useEffect(() => {
     fetchAPI();
-  }, []);
+  }, [fetchAPI()]);
   const handleReload = () => {
     fetchAPI();
   };

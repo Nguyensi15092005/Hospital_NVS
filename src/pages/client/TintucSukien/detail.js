@@ -20,7 +20,7 @@ function ChiTietTinTuc() {
       <Row justify="center">
         <Col span={20}>
           <div className="detail">
-            {data ? <img src={data.image} className="detail__image" /> : <></>}
+            {data ? <img src={data.image} className="detail__image" alt="" /> : <></>}
             <h2>
               {data ? data.title : ""}
             </h2>

@@ -39,7 +39,7 @@ function TinTucSuKien() {
               <Col xl={8} md={12} sm={22} key={item._id}>
                 <Link to={`${item.slug}`}>
                   <div className="tintuc__box-item">
-                    <img src={item.image} />
+                    <img src={item.image} alt=""/>
                     <h2>
                       {item.title}
                     </h2>

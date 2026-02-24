@@ -48,6 +48,7 @@ function LienHe() {
               allowFullScreen
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"
+              title="GG MAP"
             ></iframe>
             <ul className="context">
               <li>
