@@ -83,7 +83,6 @@ function ModelTraCuuKQ(Props) {
 
   return (
     <>
-      {contextHolder}
       <div className="main__box--item" onClick={showLoading}>
         <div className="item-icon">
           <RiCalendarScheduleFill />
