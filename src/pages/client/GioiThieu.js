@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react"
-import { Col, Image, Row } from "antd"
+import { Col, Row } from "antd"
 import { getAbout } from "../../services/client/about.service";
 import "./about.scss";
 function GioiThieu() {
@@ -19,7 +19,7 @@ function GioiThieu() {
         <>
           <Row gutter={[0, 20]}>
             <Col xl={24}>
-              <img src={data.image} className="about__image" />
+              <img src={data.image} className="about__image" alt=""/>
             </Col>
           </Row>
           <Row justify="center" className="about__about-us">
@@ -78,7 +78,7 @@ function GioiThieu() {
           <Row justify="center" className="about__team" gutter={[20]}>
             <Col xl={22}>
               <div className="about__team-box">
-                <img src={data.team.imageTeam} className="about__team--image" />
+                <img src={data.team.imageTeam} className="about__team--image" alt=""/>
                 <div className="about__team--box">
                   <div className="about__team--box-title">đội ngũ chuyên gia</div>
                   <p className="about__team--des">
@@ -92,7 +92,7 @@ function GioiThieu() {
           <Row justify="center" className="about__team" gutter={[20]}>
             <Col xl={22}>
               <div className="about__team-box">
-                <img src={data.device.imageDevice} className="about__team--image" />
+                <img src={data.device.imageDevice} className="about__team--image" alt=""/>
                 <div className="about__team--box">
                   <div className="about__team--box-title">Trang thiết bị</div>
                   <p className="about__team--des">

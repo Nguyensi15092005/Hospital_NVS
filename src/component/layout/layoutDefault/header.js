@@ -3,7 +3,7 @@ import { Row, Col } from "antd";
 import { useEffect, useState } from "react";
 import { getSetting } from "../../../services/client/setting.service";
 import ButtonModal from "./buttonmodal";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { deleteAllCookie, getCookie } from "../../../helpers/cookie";
 import { RiArrowDropDownLine } from "react-icons/ri";
 import { setLoginUser } from "../../../action/login";
@@ -13,7 +13,6 @@ function Header() {
   const dispatch = useDispatch();
   const [setting, setSeting] = useState();
   const navigate = useNavigate();
-  const islogin = useSelector((state) => state.loginUserReducer);
   useEffect(() => {
     const fetchApi = async () => {
       const res = await getSetting();
@@ -54,7 +53,7 @@ function Header() {
           <Col span={6}>
             <div className="layout__header--logo">
               <NavLink to="/">
-                {setting ? <img src={setting.logo} /> : <></>}
+                {setting ? <img src={setting.logo} alt=""/> : <></>}
               </NavLink>
               <span>{setting ? setting.name : ""}</span>
             </div>

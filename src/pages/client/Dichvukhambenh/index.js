@@ -45,7 +45,7 @@ function DichVuKhamBenh() {
               <Col xl={6} md={8} sm={22} key={item._id}>
                 <div className="service__box--item">
                   <div className="icon">
-                    <img src={item.image} />
+                    <img src={item.image} alt=""/>
                   </div>
                   <h2>
                     {item.title}

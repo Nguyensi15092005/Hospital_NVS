@@ -44,7 +44,7 @@ function LoginAdmin() {
           <Row justify="center">
             <Col xl={14} lg={18} sm={20} xs={21}>
               <div className="login__logo">
-                <img src="/images/logo.jpg" />
+                <img src="/images/logo.jpg" alt=""/>
               </div>
               <h2 className="login__title">ĐĂNG NHẬP ADMIN</h2>
               <Form layout="vertical" onFinish={handleFinish}>

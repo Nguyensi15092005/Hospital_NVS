@@ -106,7 +106,7 @@ const Auth = () => {
               </div>
 
               <div className="forgot-link">
-                <a href="#">Quên mật khâu?</a>
+                <a href="/">Quên mật khâu?</a>
               </div>
 
               <button type="submit" className="btn">

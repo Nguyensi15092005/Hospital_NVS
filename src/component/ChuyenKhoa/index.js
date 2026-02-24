@@ -58,7 +58,7 @@ function ChuyenKhoa() {
           {data?.map(item => (
             <div className="main__chuyenkhoa--item">
               <div className="main__chuyenkhoa--item-icon">
-                <img src={item.image}/>
+                <img src={item.image} alt=""/>
               </div>
               <div className="main__chuyenkhoa--item-content">
                 {item.name}

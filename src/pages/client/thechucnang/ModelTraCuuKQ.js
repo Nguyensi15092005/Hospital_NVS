@@ -1,4 +1,4 @@
-import { Tag, Modal, notification, Table } from "antd";
+import { Tag, Modal, Table } from "antd";
 import { RiCalendarScheduleFill } from "react-icons/ri";
 import { useEffect, useState } from "react";
 import { getCookie } from "../../../helpers/cookie";
@@ -16,15 +16,19 @@ function ModelTraCuuKQ(Props) {
 
   const token = getCookie("tokenUser");
   const fetchAPI = async () => {
+    if (!token) return;
+
     const res = await getLichKhamUse(token);
+
     if (res.code === 200) {
-      console.log(res.lichkhamUser);
       setData(res.lichkhamUser.reverse());
     }
   };
+
   useEffect(() => {
     fetchAPI();
-  }, [fetchAPI()]);
+  }, [token]);
+
   const handleReload = () => {
     fetchAPI();
   };
@@ -74,9 +78,7 @@ function ModelTraCuuKQ(Props) {
             </Tag>
           );
         }
-        return(
-          <HuyLichKham record={record} onReload={handleReload} />
-        )
+        return <HuyLichKham record={record} onReload={handleReload} />;
       },
     },
   ];

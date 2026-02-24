@@ -26,7 +26,7 @@ function TraLoiLichKham(Props) {
       user_email: record.email,
       message: record.message_Reply
     });
-  }, [form, record.email])
+  }, [form, record.email, record.message_Reply])
 
   const showLoading = () => {
     setOpen(true);
