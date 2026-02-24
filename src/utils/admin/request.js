@@ -3,6 +3,9 @@ import { getCookie } from "../../helpers/cookie";
 const API_DOMAIN = "https://hospital-be-full.vercel.app/api/admin/";
 // const API_DOMAIN = "http://localhost:3006/api/admin/";
 
+
+
+
 const getToken = () => getCookie("tokenAdmin");
 export const get = async (path) => {
   try {
