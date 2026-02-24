@@ -15,23 +15,28 @@ function ModelTraCuuKQ(Props) {
   const [data, setData] = useState([]);
 
   const token = getCookie("tokenUser");
-  const fetchAPI = async () => {
+  // API fetch dùng chung
+  const fetchAPI = useCallback(async () => {
     if (!token) return;
 
-    const res = await getLichKhamUse(token);
+    try {
+      const res = await getLichKhamUse(token);
 
-    if (res.code === 200) {
-      setData(res.lichkhamUser.reverse());
+      if (res.code === 200) {
+        setData([...res.lichkhamUser].reverse()); // tránh mutate array
+      }
+    } catch (error) {
+      console.error("Fetch error:", error);
     }
-  };
-
-  useEffect(() => {
-    fetchAPI();
   }, [token]);
 
-  const handleReload = () => {
+  // gọi khi component mount hoặc token đổi
+  useEffect(() => {
     fetchAPI();
-  };
+  }, [fetchAPI]);
+
+  // reload dùng lại luôn
+  const handleReload = fetchAPI;
 
   const showLoading = () => {
     setOpen(true);
