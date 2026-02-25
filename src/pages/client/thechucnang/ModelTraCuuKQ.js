@@ -1,6 +1,6 @@
 import { Tag, Modal, Table } from "antd";
 import { RiCalendarScheduleFill } from "react-icons/ri";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useCallback } from "react";
 import { getCookie } from "../../../helpers/cookie";
 import { Link } from "react-router-dom";
 import { getLichKhamUse } from "../../../services/client/lichkham.service";
